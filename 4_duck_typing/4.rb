@@ -6,8 +6,6 @@ class ShibaInu
   def paw #　お手
     puts ('(pon)')
   end
-
-  # ...(※以下略)
 end
 
 class SiberianHusky
@@ -18,8 +16,6 @@ class SiberianHusky
   def paw
     puts '(pohu)'
   end
-
-  # ...(※以下略)
 end
 
 taro = ShibaInu.new
@@ -28,5 +24,5 @@ jiro = SiberianHusky.new
 taro.bark
 taro.paw
 
-jiro.bark
+jiro.bark 
 jiro.paw
