@@ -51,5 +51,8 @@ road_bike_parts = Parts.new([chain, road_tire, tape])
 # p road_bike_parts
 
 road_bike = Bicycle.new(size: 'L', parts: Parts.new([chain, road_tire, tape]))
+mountain_bike = Bicycle.new(size: 'L', parts: Parts.new([chain, mountain_tire, front_shock, rear_shock]))
 p road_bike.size
 p road_bike.spares
+p mountain_bike.size
+p mountain_bike.spares
