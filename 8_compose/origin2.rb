@@ -31,7 +31,22 @@ class Parts
   end
 end
 
-class RoasBikeParts < Parts
+class Bicycle
+  attr_reader :size, :parts
+
+  def initialize(args={})
+    @size = args[:size]   # Bicycleの責任１ sizeを知ること
+    @parts = args[:parts] # Bicycleの責任2 partsを知ること
+  end
+
+  # Bicycleの責任3 sparesに応えること
+  def spares
+    parts.spares
+  end
+end
+
+
+class RoadBikeParts < Parts
   attr_reader :tape_color
 
   def post_initialize(args)
@@ -48,9 +63,10 @@ class RoasBikeParts < Parts
 end
 
 
-class MountainBike < Parts
+class MountainBikeParts < Parts
   attr_reader :front_shock, :rear_shock
-  def post_initialize
+
+  def post_initialize(args)
     @front_shock = args[:front_shock]
     @rear_shock = args[:rear_shock]
   end
@@ -69,6 +85,15 @@ road_bike = Bicycle.new(
   parts: RoadBikeParts.new(tape_color: 'red')
 )
 
-road_bike.size
+moutain_bike = Bicycle.new(
+  size: 'L',
+  parts: MountainBikeParts.new(rear_shock: 'Fox')
+)
 
-road_bike.spares
+p road_bike.size
+
+p road_bike.spares
+
+p moutain_bike.size
+
+p moutain_bike.spares
